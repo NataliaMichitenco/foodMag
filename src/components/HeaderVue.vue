@@ -34,8 +34,8 @@
         <p class="header_wrapper__logo-text">FoodMag</p>
       </div>
       <nav class="header_nav">
-        <button @click="$emit('toggle-cart')" class="header_btnCart"><img src="/cart.svg" alt="Cart" /></button>
-        <span v-if="totalQuantity > 0" class="cart-quantity">{{ totalQuantity }}</span>
+        <button @click="$emit('toggle-cart')" class="header_btnCart"><img src="/cart.svg" alt="Cart" /><span v-if="totalQuantity > 0" class="cart-quantity">{{ totalQuantity }}</span></button>
+        
       </nav>
     </div>
   </header>
@@ -99,22 +99,15 @@ defineProps({
 
 .cart-count {
   position: fixed;
-  top: 20px;
-  right: 40px;
+  top: 10px;
+  right: 10px;
   background-color: red;
   color: white;
   border-radius: 50%;
   padding: 5px;
   font-size: 12px;
 }
-.cart-quantity {
-  position: fixed;
- 
-  background-color: red;
-  color: white;
-  border-radius: 50%;
-  padding: 5px;
-}
+
 
 /* Стили для иконки корзины */
 .cart-icon {
@@ -130,9 +123,8 @@ defineProps({
 
 /* Стиль для отображения количества товаров в корзине */
 .cart-quantity {
-  position: absolute;
+  position: fixed;
   top: 5px;
-  right: 105px;
   background-color: red;
   color: white;
   border-radius: 50%;
